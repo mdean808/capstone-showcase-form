@@ -3,6 +3,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
 <div class="container">
@@ -18,6 +22,14 @@
     <div class="row time">
         <div class="col-12">
             <h1 class="center" id="time-block">9:00 Block</h1>
+            <div id="loading-presentations" style="display: grid; grid-template-columns: 1fr 1fr 1fr">
+                <div></div>
+                <div class="loading" style="place-self: center">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div></div>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -75,6 +87,60 @@
                 </div>
             </div>
         </div>
+        <div id="garden-classroom" style="width: 100%">
+            <div class="col-12 location">
+                <h2 class="center">Outdoor Classroom</h2>
+            </div>
+            <div id="garden-projects" class="project-list">
+                <div class="row project">
+                    <div class="col-lg-4 col-sm-12">
+                        <h3>No Presentations</h3>
+                        <span class="light"></span>
+                        <br>
+                        <span class="light"></span>
+                    </div>
+                    <div class="col-lg-8 col-sm-12 my-auto" style="background-color: #eeeeee;">
+                        <p>There are no presentations during this time block.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="science_building" style="width: 100%">
+            <div class="col-12 location">
+                <h2 class="center">Science Building</h2>
+            </div>
+            <div id="science-projects" class="project-list">
+                <div class="row project">
+                    <div class="col-lg-4 col-sm-12">
+                        <h3>No Presentations</h3>
+                        <span class="light"></span>
+                        <br>
+                        <span class="light"></span>
+                    </div>
+                    <div class="col-lg-8 col-sm-12 my-auto" style="background-color: #eeeeee;">
+                        <p>There are no presentations during this time block.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="castle-hall" style="width: 100%">
+            <div class="col-12 location">
+                <h2 class="center">Castle Lecture Hall</h2>
+            </div>
+            <div id="castle-projects" class="project-list">
+                <div class="row project">
+                    <div class="col-lg-4 col-sm-12">
+                        <h3>No Presentations</h3>
+                        <span class="light"></span>
+                        <br>
+                        <span class="light"></span>
+                    </div>
+                    <div class="col-lg-8 col-sm-12 my-auto" style="background-color: #eeeeee;">
+                        <p>There are no presentations during this time block.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="art-center" style="width: 100%">
             <div class="col-12 location">
                 <h2 class="center">Art Center</h2>
@@ -113,7 +179,7 @@
                     <label for="art">Art Center</label>
                 </div>
             </div>
-<div class="row" style="margin-top: 20px;">
+            <div class="row" style="margin-top: 20px;">
                 <div class="col-12 my-auto"
                      style="display: flex; place-content: center;">
                     <div style="margin-right: 5px;">

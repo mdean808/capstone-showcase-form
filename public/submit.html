@@ -1,0 +1,105 @@
+<head>
+    <title>2020 Capstone Showcase - Submit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-12 center">
+            <h1 class="light">Complete Signup for the 2020 Capstone Showcase</h1>
+            <h3 class="light">Review your choices and provide us with important information.</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 center">
+            <h2 class=" light">At <span style="font-weight: 700; color: #188dff">9:00</span>, you are at the <span
+                    style="font-weight: 700; color: #188dff" id="9-location">Elab</span>.</h2>
+            <h2 class=" light">At <span style="font-weight: 700; color: #188dff">10:00</span>, you are at the <span
+                    style="font-weight: 700; color: #188dff" id="10-location">Student Union</span>.</h2>
+            <h2 class=" light">At <span style="font-weight: 700; color: #188dff">11:00</span>, you are at the <span
+                    style="font-weight: 700; color: #188dff" id="11-location">Castle Lecture Hall</span>.</h2>
+            <h2 class=" light">At <span style="font-weight: 700; color: #188dff">12:00</span>, you are at the <span
+                    style="font-weight: 700; color: #188dff" id="12-location">Gym</span>.</h2>
+            <div class="center">
+                <h3>Please arrive on time and ready to learn!</h3>
+                <h3>If you do not want these locations, please <a href="/">go back</a> and re-submit the form.</h3>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 10px;">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="first">First Name</label>
+                <input type="text" class="form-control" id="first" placeholder="John">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="last">Last Name</label>
+                <input type="text" class="form-control" id="last" placeholder="Doe">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="example@example.com">
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="info-check">
+                <label class="form-check-label" for="info-check">
+                    You agree to let us contact you by email with important event information.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div style="border-bottom: 2px solid #4B9DEA;"></div>
+
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-12 my-auto"
+             style="display: flex; place-content: center;">
+            <div>
+                <a id="next-button" class="btn hollow right-text my-auto" onclick="submit()">Submit</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-shadow">
+    <div class="modal js-modal">
+        <div class="modal-image">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ocusable="false"
+                 width="1em" height="1em"
+                 style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+                 preserveAspectRatio="xMidYMid meet" viewBox="0 0 8 8">
+                <path d="M4.47 0c-.85 0-1.48.26-1.88.66c-.4.4-.54.9-.59 1.28l1 .13c.04-.25.12-.5.31-.69C3.5 1.19 3.8 1 4.47 1c.66 0 1.02.16 1.22.34c.2.18.28.4.28.66c0 .83-.34 1.06-.84 1.5c-.5.44-1.16 1.08-1.16 2.25V6h1v-.25c0-.83.31-1.06.81-1.5c.5-.44 1.19-1.08 1.19-2.25c0-.48-.17-1.02-.59-1.41C5.95.2 5.31 0 4.47 0zm-.5 7v1h1V7h-1z"
+                      fill="#626262"/>
+                <rect x="0" y="0" width="8" height="8" fill="rgba(0, 0, 0, 0)"/>
+            </svg>
+        </div>
+        <h1>Are you sure?</h1>
+        <p>By continuing to the final step you will be unable to edit your location choices.</p>
+        <br>
+        <a class="btn hollow" style="line-height: 1" onclick="finalForm()">Continue</a>
+        <br>
+        <br>
+        <br>
+        <a class="btn red hollow" style="line-height: 1" onclick="hideModal();">Go Back</a>
+    </div>
+</div>
+
+<div class="toast" id="time-block-toast">
+    <div class="img">!</div>
+    <div class="desc">Please select a location for this time block.</div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/dynamics.min.js"></script>
+<script src="js/submit.js"></script>
+</body>
+

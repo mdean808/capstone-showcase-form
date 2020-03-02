@@ -6,7 +6,8 @@ const userData = {
 		time12: ''
 	},
 	firstName: '',
-	lastName: ''
+	lastName: '',
+	email: ''
 };
 
 const backButton = document.getElementById('back-button');
@@ -147,15 +148,22 @@ function lastTimeBlock() {
 }
 
 async function loadProjectsForBlock(block) {
+	document.getElementById('loading-presentations').setAttribute('style', 'display: grid');
 	// remove all current projects
 	const elab = document.getElementById(`elab-projects`);
 	const gpac = document.getElementById(`gpac-projects`);
 	const su = document.getElementById(`su-projects`);
+	const garden = document.getElementById('garden-projects');
+	const science = document.getElementById('science-projects');
+	const castle = document.getElementById('castle-projects');
 	const art = document.getElementById(`art-projects`);
 
 	elab.innerHTML = '';
 	gpac.innerHTML = '';
 	su.innerHTML = '';
+	garden.innerHTML = '';
+	science.innerHTML = '';
+	castle.innerHTML = '';
 	art.innerHTML = '';
 	// Get the projects for the time block
 	const projects = await $.get(`/presentations?time=${block}`);
@@ -193,18 +201,30 @@ async function loadProjectsForBlock(block) {
 	elab.innerHTML = '' === elab.innerHTML ? elab.innerHTML = placeholder : elab.innerHTML;
 	gpac.innerHTML = '' === gpac.innerHTML ? gpac.innerHTML = placeholder : gpac.innerHTML;
 	su.innerHTML = '' === su.innerHTML ? su.innerHTML = placeholder : su.innerHTML;
+	garden.innerHTML = '' === garden.innerHTML ? garden.innerHTML = placeholder : garden.innerHTML;
+	science.innerHTML = '' === science.innerHTML ? science.innerHTML = placeholder : science.innerHTML;
+	castle.innerHTML = '' === castle.innerHTML ? castle.innerHTML = placeholder : castle.innerHTML;
 	art.innerHTML = '' === art.innerHTML ? art.innerHTML = placeholder : art.innerHTML;
+	document.getElementById('loading-presentations').setAttribute('style', 'display: none');
 }
 
 function finalForm() {
-	//todo: load the final view, which is a form that requests name, email, etc.
-	// it also shows the user their location and time block selections
-}
+	// Save the final location
+	const timeBlockElem = document.getElementById(`time-block`);
+	const currentBlock = timeBlockElem.innerText.split(` `)[0];
+	const locationElems = document.getElementsByName(`location`);
 
-function submit() {
-	//todo: submit the location data with the person's email and name.
+	// Save the location locally
+	let selectedALocation;
+	for (const locationElem of locationElems) {
+		if (locationElem.checked) {
+			selectedALocation = true;
+			userData.locations[`time${currentBlock.split(':')[0]}`] = locationElem.value;
+			break;
+		}
+	}
+	window.location.href = '/submit.html?data=' + JSON.stringify(userData);
 }
-
 
 function hideModal() {
 	const modal = document.querySelectorAll('.modal')[0];
