@@ -28,5 +28,16 @@ async function submit() {
 	const res = await $.post('/submit', {data: JSON.stringify(userData)});
 	if (res === '1') {
 		window.location.href = '/success.html';
+	} else {
+		toast('time-block-toast');
 	}
+}
+
+function toast(id, timeout) {
+	const x = document.getElementById(id);
+	console.log(x);
+	x.className = "toast show";
+	setTimeout(function () {
+		x.className = x.className.replace("show", "");
+	}, timeout || 5000);
 }

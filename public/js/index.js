@@ -148,6 +148,7 @@ function lastTimeBlock() {
 }
 
 async function loadProjectsForBlock(block) {
+	window.scrollTo(0,0);
 	document.getElementById('loading-presentations').setAttribute('style', 'display: grid');
 	// remove all current projects
 	const elab = document.getElementById(`elab-projects`);
